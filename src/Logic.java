@@ -41,13 +41,16 @@ public class Logic {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter offset (A to Z, 0 to 9, ()*+,-./): ");
 
-		String c = "";
-		if (scan.hasNext()) {
-			c = scan.next(); // scans only the next character entered
+		String s = "";
+		if (scan.hasNextLine()) {
+			s = scan.next(); // scans only the next character entered
 			scan.close();
 		}
 
-		return c;
+		char c = s.charAt(0); // new variable to get first character in case errant input
+		s = String.valueOf(c);
+
+		return s;
 	}
 
 	private char[] algorithm(char[] text, String encOrDec) {

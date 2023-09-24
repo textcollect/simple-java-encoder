@@ -7,18 +7,47 @@ public class Main {
 		// Press Alt+Enter with your caret at the highlighted text to see how
 		// IntelliJ IDEA suggests fixing it.
 		Logic l = new Logic();
-		System.out.println("Type 'e' to encode, 'd' to decode: ");
 		Scanner scan = new Scanner(System.in);
 
-		
-		String ptext = "";
-		String etext = "";
+//		while-loop to repeat this code until correct input
+		while (true) {
+			System.out.println("Type 'e' to encode, 'd' to decode: ");
+			String encORdec = scan.nextLine();
 
-//		String ptext = l.encode("HELLO WORLd");
-//		String etext = l.decode("FC/GGJ RJMG.");
+			if (encORdec.equalsIgnoreCase("e")) {
+				String ptext = "";
 
-		System.out.println(ptext);
-		System.out.println(etext);
+//				try-catch block in case of errant input
+				try {
+					System.out.println("Type text to encode: ");
+					ptext = scan.nextLine();
+				} catch (Exception e) {
+					System.out.println("Error. Invalid input. Try again.");
+				}
+
+				System.out.println(l.encode(ptext.toUpperCase()));
+				scan.close();
+				break;
+			} else if (encORdec.equalsIgnoreCase("d")) {
+				String etext = "";
+
+//				try-catch block in case of errant input
+				try {
+					System.out.println("Type text to decode: ");
+					etext = scan.nextLine();
+				} catch (Exception e) {
+					System.out.println("Error. Invalid input. Try again.");
+				}
+
+				System.out.println(l.decode(etext.toUpperCase()));
+				scan.close();
+				break;
+			} else {
+				System.out.println("Invalid input. Try again.");
+			}
+		}
+
+
 //		System.out.printf("Hello and welcome!\n");
 
 //		// Press Shift+F10 or click the green arrow button in the gutter to run the code.
