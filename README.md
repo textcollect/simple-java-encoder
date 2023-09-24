@@ -49,9 +49,10 @@ OOP
 
 ---
 
-**To run**:
+**To run**: From the root folder
 ```sh
-cd out/production/encoder/
+javac src\*.java
+cd src
 java Main
 ```
 

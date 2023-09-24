@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
@@ -5,8 +7,15 @@ public class Main {
 		// Press Alt+Enter with your caret at the highlighted text to see how
 		// IntelliJ IDEA suggests fixing it.
 		Logic l = new Logic();
-		String ptext = l.encode("HELLO WORLd");
-		String etext = l.decode("FC/GGJ RJMG.");
+		System.out.println("Type 'e' to encode, 'd' to decode: ");
+		Scanner scan = new Scanner(System.in);
+
+		
+		String ptext = "";
+		String etext = "";
+
+//		String ptext = l.encode("HELLO WORLd");
+//		String etext = l.decode("FC/GGJ RJMG.");
 
 		System.out.println(ptext);
 		System.out.println(etext);
